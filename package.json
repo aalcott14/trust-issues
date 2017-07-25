@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon server/server.js",
+    "watch": "./node_modules/webpack/bin/webpack.js",
+    "start": "npm run server & npm run watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint ./*"
   },
@@ -33,7 +36,6 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.6.1"
+    "webpack": "^3.3.0"
   }
 }

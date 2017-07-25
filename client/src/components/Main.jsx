@@ -2,7 +2,7 @@ import React from 'react';
 
 const Main = () => (
   <div className="Menu">
-    <h1>Main Menu and whyyy</h1>
+    <h1>Main Menu and OH MYYY</h1>
   </div>
 );
 

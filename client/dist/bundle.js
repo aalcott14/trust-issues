@@ -22425,7 +22425,7 @@ var Main = function Main() {
     _react2.default.createElement(
       "h1",
       null,
-      "Main Menu and whyyy"
+      "Main Menu and OH MYYY"
     )
   );
 };
