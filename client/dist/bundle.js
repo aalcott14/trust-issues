@@ -27447,7 +27447,7 @@ var Home = function Home() {
     _react2.default.createElement(
       "h1",
       null,
-      "Home"
+      "Pick A Politician"
     )
   );
 };

@@ -16,6 +16,10 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['babel-loader'],
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loaders: ['file-loader'],
+      },
     ],
   },
   watch: true,
