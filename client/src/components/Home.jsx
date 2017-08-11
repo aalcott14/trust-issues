@@ -27,33 +27,21 @@ class Home extends Component {
   }
 
   render() {
-    if (this.state.showLines) {
-      return (
-        <div className="Home">
-          <h1 className="title">Fact check top headlines:</h1><br />
-          <button className="fetchButton" onClick={this.getHeadlines}>
-            Get headlines
-          </button><br /><br />
-          <div>
-            {
-              this.state.headlines.data.map(line =>
-                (<span key={line.statement_url}>
-                  <a href={line.statement_url}>
-                    {line.ruling_headline}
-                  </a><br />
-                </span>),
-              )
-            }
-          </div>
-        </div>
-      );
-    }
     return (
       <div className="Home">
         <h1 className="title">Fact check top headlines:</h1><br />
         <button className="fetchButton" onClick={this.getHeadlines}>
           Get headlines
-        </button>
+        </button><br /><br />
+        <div className="headlines">
+          {this.state.showLines ? (this.state.headlines.data.map(line =>
+            (<span key={line.statement_url}>
+              <a href={line.statement_url}>
+                {line.ruling_headline}
+              </a><br />
+            </span>))) : null
+          }
+        </div>
       </div>
     );
   }

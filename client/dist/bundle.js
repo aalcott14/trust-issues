@@ -27487,41 +27487,6 @@ var Home = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.state.showLines) {
-        return _react2.default.createElement(
-          'div',
-          { className: 'Home' },
-          _react2.default.createElement(
-            'h1',
-            { className: 'title' },
-            'Fact check top headlines:'
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'button',
-            { className: 'fetchButton', onClick: this.getHeadlines },
-            'Get headlines'
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'div',
-            null,
-            this.state.headlines.data.map(function (line) {
-              return _react2.default.createElement(
-                'span',
-                { key: line.statement_url },
-                _react2.default.createElement(
-                  'a',
-                  { href: line.statement_url },
-                  line.ruling_headline
-                ),
-                _react2.default.createElement('br', null)
-              );
-            })
-          )
-        );
-      }
       return _react2.default.createElement(
         'div',
         { className: 'Home' },
@@ -27535,6 +27500,24 @@ var Home = function (_Component) {
           'button',
           { className: 'fetchButton', onClick: this.getHeadlines },
           'Get headlines'
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'div',
+          { className: 'headlines' },
+          this.state.showLines ? this.state.headlines.data.map(function (line) {
+            return _react2.default.createElement(
+              'span',
+              { key: line.statement_url },
+              _react2.default.createElement(
+                'a',
+                { href: line.statement_url },
+                line.ruling_headline
+              ),
+              _react2.default.createElement('br', null)
+            );
+          }) : null
         )
       );
     }
