@@ -34,12 +34,13 @@ class Home extends Component {
           Get headlines
         </button><br /><br />
         <div className="headlines">
-          {this.state.showLines ? (this.state.headlines.data.map(line =>
-            (<span key={line.statement_url}>
-              <a href={line.statement_url}>
-                {line.ruling_headline}
-              </a><br />
-            </span>))) : null
+          {this.state.showLines ?
+            this.state.headlines.data.map(line =>
+              (<div key={line.statement_url}>
+                {line.ruling_headline}<br />
+                <img className="ruling-graphic" alt="" src={line.ruling.canonical_ruling_graphic} />
+              </div>),
+            ) : null
           }
         </div>
       </div>

@@ -27508,14 +27508,11 @@ var Home = function (_Component) {
           { className: 'headlines' },
           this.state.showLines ? this.state.headlines.data.map(function (line) {
             return _react2.default.createElement(
-              'span',
+              'div',
               { key: line.statement_url },
-              _react2.default.createElement(
-                'a',
-                { href: line.statement_url },
-                line.ruling_headline
-              ),
-              _react2.default.createElement('br', null)
+              line.ruling_headline,
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('img', { className: 'ruling-graphic', alt: '', src: line.ruling.canonical_ruling_graphic })
             );
           }) : null
         )
