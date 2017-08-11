@@ -9,41 +9,35 @@ class Home extends Component {
       showLines: false,
     };
     this.getHeadlines = this.getHeadlines.bind(this);
-    this.showHeadlines = this.showHeadlines.bind(this);
-  }
-
-
-  componentWillMount() {
-    this.getHeadlines();
   }
 
   getHeadlines() {
     axios.get('http://www.politifact.com/api/statements/truth-o-meter/json/?n=5')
       .then((data) => {
+        console.log(data);
         this.setState({
           headlines: data,
         });
-      });
-  }
-
-  showHeadlines() {
-    this.setState({
-      showLines: true,
-    });
+      })
+      .then(() =>
+        this.setState({
+          showLines: true,
+        }),
+      );
   }
 
   render() {
     if (this.state.showLines) {
       return (
         <div className="Home">
-          <h1>Check top headlines:</h1>
-          <button onClick={this.showHeadlines}>
+          <h1 className="title">Fact check top headlines:</h1><br />
+          <button className="fetchButton" onClick={this.getHeadlines}>
             Get headlines
-          </button>
+          </button><br /><br />
           <div>
             {
               this.state.headlines.data.map(line =>
-                (<span>
+                (<span key={line.statement_url}>
                   <a href={line.statement_url}>
                     {line.ruling_headline}
                   </a><br />
@@ -56,8 +50,8 @@ class Home extends Component {
     }
     return (
       <div className="Home">
-        <h1>Check top headlines:</h1>
-        <button onClick={this.showHeadlines}>
+        <h1 className="title">Fact check top headlines:</h1><br />
+        <button className="fetchButton" onClick={this.getHeadlines}>
           Get headlines
         </button>
       </div>

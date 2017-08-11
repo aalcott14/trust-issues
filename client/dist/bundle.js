@@ -27465,31 +27465,23 @@ var Home = function (_Component) {
       showLines: false
     };
     _this.getHeadlines = _this.getHeadlines.bind(_this);
-    _this.showHeadlines = _this.showHeadlines.bind(_this);
     return _this;
   }
 
   _createClass(Home, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.getHeadlines();
-    }
-  }, {
     key: 'getHeadlines',
     value: function getHeadlines() {
       var _this2 = this;
 
       _axios2.default.get('http://www.politifact.com/api/statements/truth-o-meter/json/?n=5').then(function (data) {
+        console.log(data);
         _this2.setState({
           headlines: data
         });
-      });
-    }
-  }, {
-    key: 'showHeadlines',
-    value: function showHeadlines() {
-      this.setState({
-        showLines: true
+      }).then(function () {
+        return _this2.setState({
+          showLines: true
+        });
       });
     }
   }, {
@@ -27501,21 +27493,24 @@ var Home = function (_Component) {
           { className: 'Home' },
           _react2.default.createElement(
             'h1',
-            null,
-            'Check top headlines:'
+            { className: 'title' },
+            'Fact check top headlines:'
           ),
+          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',
-            { onClick: this.showHeadlines },
+            { className: 'fetchButton', onClick: this.getHeadlines },
             'Get headlines'
           ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'div',
             null,
             this.state.headlines.data.map(function (line) {
               return _react2.default.createElement(
                 'span',
-                null,
+                { key: line.statement_url },
                 _react2.default.createElement(
                   'a',
                   { href: line.statement_url },
@@ -27532,12 +27527,13 @@ var Home = function (_Component) {
         { className: 'Home' },
         _react2.default.createElement(
           'h1',
-          null,
-          'Check top headlines:'
+          { className: 'title' },
+          'Fact check top headlines:'
         ),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'button',
-          { onClick: this.showHeadlines },
+          { className: 'fetchButton', onClick: this.getHeadlines },
           'Get headlines'
         )
       );
