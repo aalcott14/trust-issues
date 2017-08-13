@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './Home.css';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +38,7 @@ class Home extends Component {
         <div className="headlines">
           {this.state.showLines ?
             this.state.headlines.data.map(line =>
-              (<div key={line.statement_url}>
+              (<div className="headline" key={line.statement_url}>
                 {line.ruling_headline}<br />
                 <img className="ruling-graphic" alt="" src={line.ruling.canonical_ruling_graphic} />
               </div>),

@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  background:#FFF89F;
+  font-family:'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+}
+body {
+  margin: 0;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.headlines {
+  min-height:100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.headline {
+  text-align: center;
+  align-items:center;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

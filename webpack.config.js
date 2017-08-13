@@ -7,7 +7,7 @@ module.exports = {
     path: path.join(__dirname, './client/dist/'),
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.css'],
   },
   module: {
     loaders: [
@@ -19,6 +19,10 @@ module.exports = {
       {
         test: /\.(png|jpg|gif)$/,
         loaders: ['file-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
