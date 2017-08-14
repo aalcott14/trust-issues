@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './Home.css';
 
@@ -30,22 +32,33 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
-        <h1 className="title">Fact check top headlines:</h1><br />
-        <button className="fetchButton" onClick={this.getHeadlines}>
-          Get headlines
-        </button><br /><br />
-        <div className="headlines">
-          {this.state.showLines ?
-            this.state.headlines.data.map(line =>
-              (<div className="headline" key={line.statement_url}>
-                {line.ruling_headline}<br />
-                <img className="ruling-graphic" alt="" src={line.ruling.canonical_ruling_graphic} />
-              </div>),
-            ) : null
-          }
+      <MuiThemeProvider>
+        <div className="Home">
+          <h1 className="title">Fact check top headlines:</h1>
+          <RaisedButton
+            label="Get headlines"
+            primary
+            className="fetchButton"
+            onClick={this.getHeadlines}
+          />
+          <div className="headlines">
+            {this.state.showLines ?
+              this.state.headlines.data.map(line =>
+                (<div className="headline" key={line.statement_url}>
+                  <p className="head-text">
+                    {line.ruling_headline}
+                  </p>
+                  <img
+                    className="ruling-graphic"
+                    alt=""
+                    src={line.ruling.canonical_ruling_graphic}
+                  />
+                </div>),
+              ) : null
+            }
+          </div>
         </div>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }

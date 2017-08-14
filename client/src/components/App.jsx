@@ -9,7 +9,7 @@ class App extends React.PureComponent {
     return (
       <div className="App">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        {/* <Link to="/about">About</Link> */}
 
         { children }
       </div>
