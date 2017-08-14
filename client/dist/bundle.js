@@ -29132,7 +29132,7 @@ exports = module.exports = __webpack_require__(271)(undefined);
 
 
 // module
-exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#FFF89F;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n  padding: 5px;\n}\nbody {\n  margin: 0;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  vertical-align: middle;\n  align-items:center;\n  justify-content: center;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n}\n\n.ruling-graphic {\n  width: 80%;\n}\n", ""]);
+exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#E3FBFF;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n  padding: 5px;\n}\nbody {\n  margin: 0;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  vertical-align: middle;\n  align-items:flex-end;\n  justify-content: center;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n}\n\n.head-text {\n  flex: 1;\n}\n\n.ruling-graphic {\n  width: 80%;\n  flex: 1;\n}\n", ""]);
 
 // exports
 
