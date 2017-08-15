@@ -9,6 +9,11 @@ html {
 }
 body {
   margin: 0;
+  text-align: center;
+}
+
+.fetchButton {
+  margin-top: 50px;
 }
 
 .headlines {
@@ -25,11 +30,6 @@ body {
   padding: 10px;
 }
 
-.head-text {
-  flex: 1;
-}
-
 .ruling-graphic {
   width: 80%;
-  flex: 1;
 }

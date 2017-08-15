@@ -34,9 +34,8 @@ class Home extends Component {
     return (
       <MuiThemeProvider>
         <div className="Home">
-          <h1 className="title">Fact check top headlines:</h1>
           <RaisedButton
-            label="Get headlines"
+            label="FETCH TOP HEADLINES"
             primary
             className="fetchButton"
             onClick={this.getHeadlines}

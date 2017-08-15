@@ -28177,13 +28177,8 @@ var Home = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'Home' },
-          _react2.default.createElement(
-            'h1',
-            { className: 'title' },
-            'Fact check top headlines:'
-          ),
           _react2.default.createElement(_RaisedButton2.default, {
-            label: 'Get headlines',
+            label: 'FETCH TOP HEADLINES',
             primary: true,
             className: 'fetchButton',
             onClick: this.getHeadlines
@@ -29132,7 +29127,7 @@ exports = module.exports = __webpack_require__(271)(undefined);
 
 
 // module
-exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#E3FBFF;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n  padding: 5px;\n}\nbody {\n  margin: 0;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  vertical-align: middle;\n  align-items:flex-end;\n  justify-content: center;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n}\n\n.head-text {\n  flex: 1;\n}\n\n.ruling-graphic {\n  width: 80%;\n  flex: 1;\n}\n", ""]);
+exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#E3FBFF;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n  padding: 5px;\n}\nbody {\n  margin: 0;\n  text-align: center;\n}\n\n.fetchButton {\n  margin-top: 50px;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  vertical-align: middle;\n  align-items:flex-end;\n  justify-content: center;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n}\n\n.ruling-graphic {\n  width: 80%;\n}\n", ""]);
 
 // exports
 
