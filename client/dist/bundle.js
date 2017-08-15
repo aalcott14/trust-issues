@@ -27979,6 +27979,12 @@ var App = function (_React$PureComponent) {
     value: function render() {
       var children = this.props.children;
 
+      var styles = {
+        title: {
+          textDecoration: 'none',
+          color: 'white'
+        }
+      };
 
       return _react2.default.createElement(
         _MuiThemeProvider2.default,
@@ -27989,7 +27995,7 @@ var App = function (_React$PureComponent) {
           _react2.default.createElement(_AppBar2.default, {
             title: _react2.default.createElement(
               _reactRouter.Link,
-              { to: '/' },
+              { to: '/', style: styles.title },
               'Home'
             )
           }),

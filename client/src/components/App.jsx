@@ -7,12 +7,18 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 class App extends React.PureComponent {
   render() {
     const { children } = this.props;
+    const styles = {
+      title: {
+        textDecoration: 'none',
+        color: 'white',
+      },
+    };
 
     return (
       <MuiThemeProvider>
         <div className="App">
           <AppBar
-            title={<Link to="/">Home</Link>}
+            title={<Link to="/" style={styles.title}>Home</Link>}
           />
           {/* <Link to="/about">About</Link> */}
 
