@@ -33,11 +33,11 @@ class Home extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="Home">
+        <div className="home">
           <RaisedButton
             label="FETCH TOP HEADLINES"
             primary
-            className="fetchButton"
+            className="fetch-button"
             onClick={this.getHeadlines}
           />
           <div className="headlines">
