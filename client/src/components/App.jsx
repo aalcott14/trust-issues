@@ -1,36 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router';
-import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-class App extends React.PureComponent {
-  render() {
-    const { children } = this.props;
-    const styles = {
-      title: {
-        textDecoration: 'none',
-        color: 'white',
-      },
-    };
+import Home from './Home';
+import Drag from './Drag';
 
-    return (
-      <MuiThemeProvider>
-        <div className="App">
-          <AppBar
-            title={<Link to="/" style={styles.title}>Home</Link>}
-          />
-          {/* <Link to="/about">About</Link> */}
-
-          { children }
-        </div>
-      </MuiThemeProvider>
-    );
-  }
-}
-
-App.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const App = () => (
+  <MuiThemeProvider>
+    <div className="App">
+      <Tabs>
+        <Tab
+          label="TOP HEADLINES"
+        >
+          <Home />
+        </Tab>
+        <Tab
+          label="DRAG AND DROP"
+        >
+          <Drag />
+        </Tab>
+      </Tabs>
+    </div>
+  </MuiThemeProvider>
+);
 
 export default App;
