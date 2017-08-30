@@ -11,8 +11,13 @@ class Home extends Component {
     this.state = {
       headlines: [],
       showLines: false,
+      showError: false,
     };
     this.getHeadlines = this.getHeadlines.bind(this);
+  }
+
+  componentWillMount() {
+    this.getHeadlines();
   }
 
   getHeadlines() {
@@ -21,6 +26,12 @@ class Home extends Component {
         console.log(data);
         this.setState({
           headlines: data,
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          headlines: [],
+          showError: `${err.message} - Error loading headlines. Please try again.`,
         });
       })
       .then(() =>
@@ -35,25 +46,31 @@ class Home extends Component {
       <MuiThemeProvider>
         <div className="home">
           <RaisedButton
-            label="FETCH TOP HEADLINES"
+            label="REFRESH HEADLINES"
             primary
             className="fetch-button"
             onClick={this.getHeadlines}
           />
           <div className="headlines">
-            {this.state.showLines ?
-              this.state.headlines.data.map(line =>
-                (<div className="headline" key={line.statement_url}>
-                  <p className="head-text">
-                    {line.ruling_headline}
-                  </p>
-                  <img
-                    className="ruling-graphic"
-                    alt=""
-                    src={line.ruling.canonical_ruling_graphic}
-                  />
-                </div>),
-              ) : null
+            {
+              this.state.showLines ?
+                this.state.headlines.data.map(line =>
+                  (<div className="headline" key={line.statement_url}>
+                    <p className="head-text">
+                      {line.ruling_headline}
+                    </p>
+                    <img
+                      className="ruling-graphic"
+                      alt=""
+                      src={line.ruling.canonical_ruling_graphic}
+                    />
+                  </div>),
+                ) : null
+            }
+            {
+              this.state.showError ?
+                <p className="error-message">{this.state.showError}</p> :
+                null
             }
           </div>
         </div>

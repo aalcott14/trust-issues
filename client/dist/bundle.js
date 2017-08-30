@@ -39402,13 +39402,19 @@ var Home = function (_Component) {
 
     _this.state = {
       headlines: [],
-      showLines: false
+      showLines: false,
+      showError: false
     };
     _this.getHeadlines = _this.getHeadlines.bind(_this);
     return _this;
   }
 
   _createClass(Home, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.getHeadlines();
+    }
+  }, {
     key: 'getHeadlines',
     value: function getHeadlines() {
       var _this2 = this;
@@ -39417,6 +39423,11 @@ var Home = function (_Component) {
         console.log(data);
         _this2.setState({
           headlines: data
+        });
+      }).catch(function (err) {
+        _this2.setState({
+          headlines: [],
+          showError: err.message + ' - Error loading headlines. Please try again.'
         });
       }).then(function () {
         return _this2.setState({
@@ -39434,7 +39445,7 @@ var Home = function (_Component) {
           'div',
           { className: 'home' },
           _react2.default.createElement(_RaisedButton2.default, {
-            label: 'FETCH TOP HEADLINES',
+            label: 'REFRESH HEADLINES',
             primary: true,
             className: 'fetch-button',
             onClick: this.getHeadlines
@@ -39457,7 +39468,12 @@ var Home = function (_Component) {
                   src: line.ruling.canonical_ruling_graphic
                 })
               );
-            }) : null
+            }) : null,
+            this.state.showError ? _react2.default.createElement(
+              'p',
+              { className: 'error-message' },
+              this.state.showError
+            ) : null
           )
         )
       );
@@ -41094,7 +41110,7 @@ exports = module.exports = __webpack_require__(192)(undefined);
 
 
 // module
-exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#FCFFFF;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n}\n\n.home {\n  padding: 10px;\n  text-align: center;\n}\n\n.fetch-button {\n  margin-top: 50px;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  vertical-align: middle;\n  align-items:flex-end;\n  justify-content: center;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n}\n\n.ruling-graphic {\n  width: 80%;\n}\n", ""]);
+exports.push([module.i, "html {\n  box-sizing: border-box;\n  background:#FCFFFF;\n  font-family:'helvetica neue';\n  font-size: 20px;\n  font-weight: 200;\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n}\n\n.home {\n  padding: 10px;\n  text-align: center;\n}\n\n.fetch-button {\n  margin-top: 50px;\n}\n\n.headlines {\n  overflow: hidden;\n  display: flex;\n  align-items:flex-end;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n\n.headline {\n  text-align: center;\n  flex: 1;\n  padding: 10px;\n  width: 17vh;\n}\n\n.ruling-graphic {\n  width: 15vh;\n}\n\n.error-message {\n  color: red;\n}\n", ""]);
 
 // exports
 
