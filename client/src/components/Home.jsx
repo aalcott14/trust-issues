@@ -10,6 +10,7 @@ class Home extends Component {
     super(props);
     this.state = {
       headlines: [],
+      sameHeadlines: '',
       showLines: false,
       showError: false,
     };
@@ -26,6 +27,7 @@ class Home extends Component {
         console.log(data);
         this.setState({
           headlines: data,
+          showError: '',
         });
       })
       .catch((err) => {

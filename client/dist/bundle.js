@@ -39402,6 +39402,7 @@ var Home = function (_Component) {
 
     _this.state = {
       headlines: [],
+      sameHeadlines: '',
       showLines: false,
       showError: false
     };
@@ -39422,7 +39423,8 @@ var Home = function (_Component) {
       _axios2.default.get('http://www.politifact.com/api/statements/truth-o-meter/json/?n=5').then(function (data) {
         console.log(data);
         _this2.setState({
-          headlines: data
+          headlines: data,
+          showError: ''
         });
       }).catch(function (err) {
         _this2.setState({
