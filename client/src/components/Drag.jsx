@@ -9,14 +9,18 @@ class Drag extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: null,
+      showImage: false,
+      buttonText: 'Show Image',
     };
-    this.test = this.test.bind(this);
+    this.showImage = this.showImage.bind(this);
   }
 
-  test() {
+  showImage() {
     this.setState({
-      test: 'PLEASE STAY',
+      showImage: !this.state.showImage,
+    });
+    this.setState({
+      buttonText: !this.state.showImage ? 'Hide Image' : 'Show Image',
     });
   }
 
@@ -25,13 +29,16 @@ class Drag extends Component {
       <MuiThemeProvider>
         <div className="drag">
           <div className="images">
-            <img alt="" src={trump} />
+            {this.state.showImage ?
+              <img alt="" src={trump} /> :
+              null
+            }
           </div>
           <RaisedButton
-            label="TEST BUTTON"
+            label={this.state.buttonText}
             primary
             className="test-button"
-            onClick={this.test}
+            onClick={this.showImage}
           />
         </div>
       </MuiThemeProvider>

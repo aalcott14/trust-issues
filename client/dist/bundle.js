@@ -41260,17 +41260,21 @@ var Drag = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Drag.__proto__ || Object.getPrototypeOf(Drag)).call(this, props));
 
     _this.state = {
-      test: null
+      showImage: false,
+      buttonText: 'Show Image'
     };
-    _this.test = _this.test.bind(_this);
+    _this.showImage = _this.showImage.bind(_this);
     return _this;
   }
 
   _createClass(Drag, [{
-    key: 'test',
-    value: function test() {
+    key: 'showImage',
+    value: function showImage() {
       this.setState({
-        test: 'PLEASE STAY'
+        showImage: !this.state.showImage
+      });
+      this.setState({
+        buttonText: !this.state.showImage ? 'Hide Image' : 'Show Image'
       });
     }
   }, {
@@ -41285,13 +41289,13 @@ var Drag = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'images' },
-            _react2.default.createElement('img', { alt: '', src: _trump2.default })
+            this.state.showImage ? _react2.default.createElement('img', { alt: '', src: _trump2.default }) : null
           ),
           _react2.default.createElement(_RaisedButton2.default, {
-            label: 'TEST BUTTON',
+            label: this.state.buttonText,
             primary: true,
             className: 'test-button',
-            onClick: this.test
+            onClick: this.showImage
           })
         )
       );
