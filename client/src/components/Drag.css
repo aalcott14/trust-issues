@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.images {
+  display: flex;
+  justify-content: center;
+}
+
 .test-button {
   margin-top: 50px;
 }

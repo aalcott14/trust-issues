@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import './Drag.css';
+import trump from '../images/trump.png';
 
 class Drag extends Component {
   constructor(props) {
@@ -23,6 +24,9 @@ class Drag extends Component {
     return (
       <MuiThemeProvider>
         <div className="drag">
+          <div className="images">
+            <img alt="" src={trump} />
+          </div>
           <RaisedButton
             label="TEST BUTTON"
             primary

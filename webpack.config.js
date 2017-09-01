@@ -3,8 +3,9 @@ const path = require('path');
 module.exports = {
   entry: './client/src/app.jsx',
   output: {
-    filename: 'bundle.js',
     path: path.join(__dirname, './client/dist/'),
+    filename: 'bundle.js',
+    publicPath: './dist/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.css'],
@@ -17,8 +18,8 @@ module.exports = {
         loaders: ['babel-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        loaders: ['file-loader'],
+        test: /\.(png|jpg)$/,
+        loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]'],
       },
       {
         test: /\.css$/,

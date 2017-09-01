@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./dist/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 194);
@@ -41239,6 +41239,10 @@ var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
 
 __webpack_require__(459);
 
+var _trump = __webpack_require__(461);
+
+var _trump2 = _interopRequireDefault(_trump);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41278,6 +41282,11 @@ var Drag = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'drag' },
+          _react2.default.createElement(
+            'div',
+            { className: 'images' },
+            _react2.default.createElement('img', { alt: '', src: _trump2.default })
+          ),
           _react2.default.createElement(_RaisedButton2.default, {
             label: 'TEST BUTTON',
             primary: true,
@@ -41334,10 +41343,16 @@ exports = module.exports = __webpack_require__(192)(undefined);
 
 
 // module
-exports.push([module.i, ".drag {\n  padding: 10px;\n  text-align: center;\n}\n\n.test-button {\n  margin-top: 50px;\n}\n", ""]);
+exports.push([module.i, ".drag {\n  padding: 10px;\n  text-align: center;\n}\n\n.images {\n  display: flex;\n  justify-content: center;\n}\n\n.test-button {\n  margin-top: 50px;\n}\n", ""]);
 
 // exports
 
+
+/***/ }),
+/* 461 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e056a60917012d30e9c6cf785181258e.png";
 
 /***/ })
 /******/ ]);
