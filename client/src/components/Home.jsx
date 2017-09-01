@@ -58,6 +58,9 @@ class Home extends Component {
               this.state.showLines ?
                 this.state.headlines.data.map(line =>
                   (<div className="headline" key={line.statement_url}>
+                    <p className="speaker">
+                      <strong>{`${line.speaker.first_name} ${line.speaker.last_name}`}</strong>
+                    </p>
                     <p className="head-text">
                       {line.ruling_headline}
                     </p>

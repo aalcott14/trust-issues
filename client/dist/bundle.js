@@ -39461,6 +39461,15 @@ var Home = function (_Component) {
                 { className: 'headline', key: line.statement_url },
                 _react2.default.createElement(
                   'p',
+                  { className: 'speaker' },
+                  _react2.default.createElement(
+                    'strong',
+                    null,
+                    line.speaker.first_name + ' ' + line.speaker.last_name
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
                   { className: 'head-text' },
                   line.ruling_headline
                 ),
