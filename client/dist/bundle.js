@@ -41252,6 +41252,26 @@ var _trump = __webpack_require__(461);
 
 var _trump2 = _interopRequireDefault(_trump);
 
+var _hilary = __webpack_require__(462);
+
+var _hilary2 = _interopRequireDefault(_hilary);
+
+var _jeff = __webpack_require__(463);
+
+var _jeff2 = _interopRequireDefault(_jeff);
+
+var _paul = __webpack_require__(464);
+
+var _paul2 = _interopRequireDefault(_paul);
+
+var _elizabeth = __webpack_require__(465);
+
+var _elizabeth2 = _interopRequireDefault(_elizabeth);
+
+var _bernie = __webpack_require__(466);
+
+var _bernie2 = _interopRequireDefault(_bernie);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41270,7 +41290,8 @@ var Drag = function (_Component) {
 
     _this.state = {
       showImage: false,
-      buttonText: 'Show Image'
+      buttonText: 'Show Images',
+      images: [_trump2.default, _hilary2.default]
     };
     _this.showImage = _this.showImage.bind(_this);
     return _this;
@@ -41283,7 +41304,7 @@ var Drag = function (_Component) {
         showImage: !this.state.showImage
       });
       this.setState({
-        buttonText: !this.state.showImage ? 'Hide Image' : 'Show Image'
+        buttonText: !this.state.showImage ? 'Hide Images' : 'Show Images'
       });
     }
   }, {
@@ -41295,11 +41316,16 @@ var Drag = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'drag' },
-          _react2.default.createElement(
+          this.state.showImage ? _react2.default.createElement(
             'div',
             { className: 'images' },
-            this.state.showImage ? _react2.default.createElement('img', { alt: '', src: _trump2.default }) : null
-          ),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _trump2.default }),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _hilary2.default }),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _jeff2.default }),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _paul2.default }),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _elizabeth2.default }),
+            _react2.default.createElement('img', { className: 'image', alt: '', src: _bernie2.default })
+          ) : null,
           _react2.default.createElement(_RaisedButton2.default, {
             label: this.state.buttonText,
             primary: true,
@@ -41356,7 +41382,7 @@ exports = module.exports = __webpack_require__(192)(undefined);
 
 
 // module
-exports.push([module.i, ".drag {\n  padding: 10px;\n  text-align: center;\n}\n\n.images {\n  display: flex;\n  justify-content: center;\n}\n\n.test-button {\n  margin-top: 50px;\n}\n", ""]);
+exports.push([module.i, ".drag {\n  padding: 10px;\n  text-align: center;\n}\n\n.images {\n  margin-top: 50px;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n\n.image {\n  padding: 10px;\n  border-radius: 20px;\n}\n\n.test-button {\n  margin-top: 50px;\n}\n", ""]);
 
 // exports
 
@@ -41366,6 +41392,36 @@ exports.push([module.i, ".drag {\n  padding: 10px;\n  text-align: center;\n}\n\n
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "e056a60917012d30e9c6cf785181258e.png";
+
+/***/ }),
+/* 462 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "3c36c0d9a8d803673f64bb00ffcbf3d3.png";
+
+/***/ }),
+/* 463 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b1aaf38a017c20dbbcc5ef61bc85244a.png";
+
+/***/ }),
+/* 464 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "bf7ad02baf0415e020c106ee5196e338.png";
+
+/***/ }),
+/* 465 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "5ee70b6dd92329f0ad7cfd203a128e76.png";
+
+/***/ }),
+/* 466 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "3d10c97778cf07f9eae4d13179de7df5.png";
 
 /***/ })
 /******/ ]);

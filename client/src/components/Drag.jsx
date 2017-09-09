@@ -4,13 +4,19 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import './Drag.css';
 import trump from '../images/trump.png';
+import hilary from '../images/hilary.png';
+import jeff from '../images/jeff.png';
+import paul from '../images/paul.png';
+import elizabeth from '../images/elizabeth.png';
+import bernie from '../images/bernie.png';
 
 class Drag extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showImage: false,
-      buttonText: 'Show Image',
+      buttonText: 'Show Images',
+      images: [trump, hilary]
     };
     this.showImage = this.showImage.bind(this);
   }
@@ -20,7 +26,7 @@ class Drag extends Component {
       showImage: !this.state.showImage,
     });
     this.setState({
-      buttonText: !this.state.showImage ? 'Hide Image' : 'Show Image',
+      buttonText: !this.state.showImage ? 'Hide Images' : 'Show Images',
     });
   }
 
@@ -28,12 +34,17 @@ class Drag extends Component {
     return (
       <MuiThemeProvider>
         <div className="drag">
-          <div className="images">
-            {this.state.showImage ?
-              <img alt="" src={trump} /> :
-              null
-            }
-          </div>
+          {this.state.showImage ?
+            <div className="images">
+              <img className="image" alt="" src={trump} />
+              <img className="image" alt="" src={hilary} />
+              <img className="image" alt="" src={jeff} />
+              <img className="image" alt="" src={paul} />
+              <img className="image" alt="" src={elizabeth} />
+              <img className="image" alt="" src={bernie} />
+            </div> :
+            null
+          }
           <RaisedButton
             label={this.state.buttonText}
             primary

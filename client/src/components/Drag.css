@@ -4,8 +4,15 @@
 }
 
 .images {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.image {
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .test-button {
